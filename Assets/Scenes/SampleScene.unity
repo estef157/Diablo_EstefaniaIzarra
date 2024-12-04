@@ -2311,6 +2311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57da75d06b27cf0438435e34c81e6f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocidad: 0
 --- !u!54 &866244636
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3362,6 +3363,7 @@ GameObject:
   - component: {fileID: 1072763296}
   - component: {fileID: 1072763295}
   - component: {fileID: 1072763294}
+  - component: {fileID: 1072763299}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -3381,6 +3383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b857102b525bc4db31b86b697e7e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tiempoRotacion: 0
 --- !u!136 &1072763295
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3470,6 +3473,24 @@ Transform:
   - {fileID: 1187386063}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1072763299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072763293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.75396407, b: 0.11792451, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1082719340
 PrefabInstance:
   m_ObjectHideFlags: 0

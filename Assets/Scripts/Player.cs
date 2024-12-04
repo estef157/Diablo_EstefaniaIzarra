@@ -5,8 +5,11 @@ using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private float velocidad;
     NavMeshAgent agent;
     private Camera cam;
+    //Guarda info del npc con que interactuas
+    private NPC npcActual;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,11 @@ public class Player : MonoBehaviour
         {
             if(Input.GetMouseButtonDown(0))
             {
+                //Mirar si el punto donde he impactado tiene el script NPC
+                if (hit.transform.TryGetComponent(out NPC npc))
+                {
+                    npcActual = npc;
+                }
                 agent.SetDestination(hit.point);
             }
             
