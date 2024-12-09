@@ -6,6 +6,7 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     private Outline outline;
+    [SerializeField] private DialogaSO dialogo;
     [SerializeField] private float tiempoRotacion;
     // Start is called before the first frame update
     private void Awake()
@@ -28,7 +29,7 @@ public class NPC : MonoBehaviour
 
     public void Interactuar (Transform interactuador)
     {
-        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y); 
+        //transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete (() => SistemaDialogo.sistema.IniciarDialogo()); 
     }
 
     private void OnMouseEnter()//cuando pasamos el ratón por encima

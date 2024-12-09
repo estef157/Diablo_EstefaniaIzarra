@@ -5,11 +5,12 @@ using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
+
     [SerializeField] private float velocidad;
     NavMeshAgent agent;
     private Camera cam;
     //Guarda info del npc con que interactuas
-    private NPC npcActual;
+    private Transform ultimoClick;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,21 +21,45 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //trazar un raycast desde la cámara a la posición del ratón.
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast (ray, out RaycastHit hit))
+       
+        Movimiento();
+        if (ultimoClick && ultimoClick.TryGetComponent(out NPC npc))
         {
-            if(Input.GetMouseButtonDown(0))
+            //agent.stoppingDistance = distanciaInteraccion;
+            if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
             {
-                //Mirar si el punto donde he impactado tiene el script NPC
-                if (hit.transform.TryGetComponent(out NPC npc))
                 {
-                    npcActual = npc;
+                    npc.Interactuar(this.transform);
+                    ultimoClick = null;
+                  
+
                 }
-                agent.SetDestination(hit.point);
             }
-            
+        }
+        else if (ultimoClick)
+        {
+            agent.stoppingDistance = 0f;
+        }
+
+    }
+        void Movimiento()
+        {
+            //trazar un raycast desde la cámara a la posición del ratón.
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    ultimoClick = hit.transform;
+                    agent.SetDestination(hit.point);
+                }
+
+
+
+            }
+
 
         }
+
+
     }
-}
