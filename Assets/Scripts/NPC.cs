@@ -8,6 +8,7 @@ public class NPC : MonoBehaviour
     private Outline outline;
     [SerializeField] private DialogaSO dialogo;
     [SerializeField] private float tiempoRotacion;
+    [SerializeField] private Transform cameraPoint;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -29,7 +30,7 @@ public class NPC : MonoBehaviour
 
     public void Interactuar (Transform interactuador)
     {
-        //transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete (() => SistemaDialogo.sistema.IniciarDialogo()); 
+        //transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete (() => SistemaDialogo.sistema.IniciarDialogo(dialogo, cameraPoint)); 
     }
 
     private void OnMouseEnter()//cuando pasamos el ratón por encima

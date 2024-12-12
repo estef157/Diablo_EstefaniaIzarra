@@ -6,6 +6,8 @@ public class SistemaDialogo : MonoBehaviour
 {
     [SerializeField] private GameObject marco;
     [SerializeField] private TMP_Text textoDialogo;
+    [SerializeField] private Transform npcCamera;
+
 
     private bool escribiendo; //Determina si el sistema está escribiendo o no.
     private int indiceFraseActual;//marca la frase actual
@@ -28,8 +30,10 @@ public class SistemaDialogo : MonoBehaviour
     // Update is called once per frame
    
 
-   // public void IniciarDialogo(DialogaSO dialogo)
+   // public void IniciarDialogo(DialogaSO dialogo, Transform cameraPoint)
    // {
+   //     Time.timeScale = 0f;
+   //     npcCamera.SetPositionAndRotation(cameraPoint.position, cameraPoint.rotation);
         //El diálogo actual con el que trabajamos es el que me dan por parámetro de entrada.
      //   dialogoActual = dialogo;
     //    marco.SetActive(true);
