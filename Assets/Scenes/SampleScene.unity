@@ -5646,7 +5646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadCombate: 10
-  distanciaAtaque: 2
+  distanciaAtaque: 3
   movAgent: {fileID: 304217512}
   main: {fileID: 304217511}
 --- !u!1001 &1806584780
