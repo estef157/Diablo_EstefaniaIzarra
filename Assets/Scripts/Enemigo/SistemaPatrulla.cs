@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class SistemaPatrulla : MonoBehaviour
 {
+    
+    [SerializeField] private Enemigo main;
     [SerializeField] private Transform ruta;
     [SerializeField] private NavMeshAgent agent;
     List<Vector3> listadoPuntos = new List<Vector3>();//una lista a diferencia de un Array puede cambiar, puedes tener cero elementos y tu lo vas metiendo.
@@ -14,7 +16,8 @@ public class SistemaPatrulla : MonoBehaviour
 
     private void Awake()
     {
-       
+        main.SistemaPatrulla = this;//comunico al main que el sistema de patrulla soy yo.
+
         //voy recorriendo todos los puntos que tiene mi ruta...
         foreach (Transform punto in ruta)
         {
@@ -25,6 +28,7 @@ public class SistemaPatrulla : MonoBehaviour
     }
     void Start()
     {
+        
         StartCoroutine(PatrullarYEsperar());
     }
 
@@ -34,14 +38,16 @@ public class SistemaPatrulla : MonoBehaviour
         {
             CalcularDestino();//calculame un nuevo destino
             agent.SetDestination(destinoActual);//Se te marca dicho destino
-            yield return new WaitUntil( ()=> !agent.pathPending && agent.remainingDistance <= 0.2f); ;//Espera a llegar a dicho destino y repites.
+            yield return new WaitUntil( ()=> !agent.pathPending && agent.remainingDistance <= 0.2f); ;//Espera a llegar a dicho destino y repites. ()=> obligatorio, metodo anonimo. el waituntil te pide una funcion con bool
+
+            yield return new WaitForSeconds(Random.Range(0.25f, 3f));
         }
         
     }
 
     private void CalcularDestino()
     {
-        indiceRutaActual++;
+        indiceRutaActual++;///avanzas 1 en el indice
         if(indiceRutaActual >= listadoPuntos.Count)
         {
             //Si no me quedan puntos, volveré al punto 0.
@@ -53,5 +59,17 @@ public class SistemaPatrulla : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            main.ActivaCombate(other.transform);//ctrl + click
+            this.enabled = false;//quito patrulla
+            StopAllCoroutines();//paro corrutinas
+            
+            
+        }
     }
 }
