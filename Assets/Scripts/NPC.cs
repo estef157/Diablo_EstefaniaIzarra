@@ -30,7 +30,7 @@ public class NPC : MonoBehaviour
 
     public void Interactuar (Transform interactuador)
     {
-        //transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete (() => SistemaDialogo.sistema.IniciarDialogo(dialogo, cameraPoint)); 
+        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete (() => SistemaDialogo.sistema.IniciarDialogo(dialogo, cameraPoint)); 
     }
 
     private void OnMouseEnter()//cuando pasamos el ratón por encima

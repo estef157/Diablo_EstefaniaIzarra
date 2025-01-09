@@ -29,7 +29,10 @@ public class Enemigo : MonoBehaviour
         //nos dicen de activar el combate
          sistemaCombate.enabled = true;
     }
-    
 
-
+    internal void activarPatrulla()
+    {
+        sistemaCombate.enabled = false;
+        sistemaPatrulla.enabled = true;
+    }
 }

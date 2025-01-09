@@ -5,12 +5,12 @@ using UnityEngine.AI;
 
 public class SistemaBlendTree : MonoBehaviour
 {
-    private Animator anim;
+    private Animator animEnemigo;
     [SerializeField] NavMeshAgent agent;
     // Start is called before the first frame update
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        animEnemigo = GetComponent<Animator>();
     }
     void Start()
     {
@@ -20,7 +20,7 @@ public class SistemaBlendTree : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("velocity", agent.velocity.magnitude / agent.speed);
+        animEnemigo.SetFloat("velocity", agent.velocity.magnitude / agent.speed);
     }
     private void OnAnimatorMove()
     {

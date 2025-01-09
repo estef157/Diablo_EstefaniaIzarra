@@ -1042,7 +1042,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304217508}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -2264,6 +2264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 703598662}
   - component: {fileID: 703598661}
+  - component: {fileID: 703598663}
   m_Layer: 0
   m_Name: Escenario
   m_TagString: Untagged
@@ -2323,6 +2324,37 @@ Transform:
   - {fileID: 1606765182}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &703598663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703598660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -334000983
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 0}
+  m_BuildHeightMesh: 0
 --- !u!4 &744000149 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7660012703410721794, guid: d547c252218c2a840ae1014d344118f5,
@@ -5646,6 +5678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadCombate: 10
+  anim: {fileID: 1177304515}
   distanciaAtaque: 3
   movAgent: {fileID: 304217512}
   main: {fileID: 304217511}
@@ -5854,6 +5887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 304217511}
   ruta: {fileID: 1278223598}
+  velocidadPatrulla: 5
   agent: {fileID: 304217512}
 --- !u!135 &1830115680
 SphereCollider:

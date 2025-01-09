@@ -8,6 +8,7 @@ public class SistemaPatrulla : MonoBehaviour
     
     [SerializeField] private Enemigo main;
     [SerializeField] private Transform ruta;
+    [SerializeField] private float velocidadPatrulla;
     [SerializeField] private NavMeshAgent agent;
     List<Vector3> listadoPuntos = new List<Vector3>();//una lista a diferencia de un Array puede cambiar, puedes tener cero elementos y tu lo vas metiendo.
 
@@ -29,9 +30,15 @@ public class SistemaPatrulla : MonoBehaviour
     void Start()
     {
         
-        StartCoroutine(PatrullarYEsperar());
+        
     }
 
+    private void OnEnable()
+    {
+        indiceRutaActual += -1; //empiezo la ruta desde el comienzo
+        agent.speed = velocidadPatrulla; //vuelvo a la vel de patrulla
+        StartCoroutine(PatrullarYEsperar()); //vuelve la corrutina
+    }
     private IEnumerator PatrullarYEsperar()
     {
         while(true)
