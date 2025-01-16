@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour
+public class NPC : MonoBehaviour, IInteractuable
 {
     private Outline outline;
     [SerializeField] private DialogaSO dialogo;
     [SerializeField] private float tiempoRotacion;
+    
     [SerializeField] private Transform cameraPoint;
     // Start is called before the first frame update
     private void Awake()
@@ -43,5 +44,10 @@ public class NPC : MonoBehaviour
     {
         
         outline.enabled = false;
+    }
+
+    private void IniciarDialogo()
+    {
+        
     }
 }

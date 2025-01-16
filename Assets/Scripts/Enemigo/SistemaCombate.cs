@@ -11,6 +11,7 @@ public class SistemaCombate : MonoBehaviour
     
     [SerializeField] float velocidadCombate;
     [SerializeField] Animator anim;
+    [SerializeField] float danhoAtaque;
     [SerializeField] float distanciaAtaque;
     [SerializeField] NavMeshAgent movAgent;
     [SerializeField] Enemigo main;
@@ -25,7 +26,7 @@ public class SistemaCombate : MonoBehaviour
     private void OnEnable() //el combate ha sido habilitado
     {
         movAgent.speed = velocidadCombate;
-        movAgent.stoppingDistance = distanciaAtaque;
+        movAgent.stoppingDistance = 0;
     }
     void Start()
     {
@@ -38,7 +39,7 @@ public class SistemaCombate : MonoBehaviour
         if(main.MainTarget != null && movAgent.CalculatePath(main.MainTarget.position, new NavMeshPath()))//si el target es alcanzable
         {
             EnfocarObjetivo();
-            movAgent.SetDestination(main.MainTarget.position);
+            movAgent.SetDestination (main.MainTarget.position);
 
             if(movAgent.remainingDistance <= distanciaAtaque)
             {

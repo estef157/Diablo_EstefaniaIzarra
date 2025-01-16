@@ -23,18 +23,22 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        Movimiento();
-        if (ultimoClick && ultimoClick.TryGetComponent(out NPC npc))
+         if(Time.timeScale ==1)
         {
-            //agent.stoppingDistance = distanciaInteraccion;
+            Movimiento();
+        }
+
+
+   
+        if (ultimoClick && ultimoClick.TryGetComponent(out IInteractuable interactuable))
+        {
+           
             if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
             {
                 {
-                    transform.DOLookAt(npc.transform.position, tiempoRotacion, AxisConstraint.Y).OnComplete( ()=> LanzarInteraccion(npc));
-                    
-                  
-
+                    LanzarInteraccion(interactuable);
+                 
+          
                 }
             }
         }
@@ -45,14 +49,14 @@ public class Player : MonoBehaviour
 
     }
 
-    private void LanzarInteraccion(NPC npc)
+    private void LanzarInteraccion(IInteractuable interactuable)
     {
-        npc.Interactuar(this.transform);
+        interactuable.Interactuar(transform);
         ultimoClick = null;
     }
-        void Movimiento()
-        {
-            //trazar un raycast desde la cámara a la posición del ratón.
+    void Movimiento()
+    {
+           //trazar un raycast desde la cámara a la posición del ratón.
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
@@ -67,7 +71,7 @@ public class Player : MonoBehaviour
             }
 
 
-        }
-
-
     }
+
+
+   }
