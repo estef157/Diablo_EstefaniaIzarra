@@ -9,5 +9,9 @@ public  interface IInteractuable
     //ej en el theforest tanto arbol como enemigo son dañables por el hacha.
     public void Interactuar(Transform interactuador);
 
+
+
+
+
     
 }
