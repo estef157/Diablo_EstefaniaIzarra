@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: DialogoUno
   m_EditorClassIdentifier: 
   frases:
-  - holi
-  tiempoEntreLetras: 0
+  - "Hola wey, dame setas pls la mota est\xE1 cara."
+  - Gracias por todo crack, solo quiero 3 eh.
+  frasesClip: []
+  tiempoEntreLetras: 0.01
+  tieneMision: 1
+  textoMision: Consigue setas para tu amigo

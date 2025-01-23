@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SistemaDialogo : MonoBehaviour
 {
+    private EventManagerSO eventManager;
     [SerializeField] private GameObject marco;
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField] private Transform npcCamera;
@@ -83,12 +84,18 @@ public class SistemaDialogo : MonoBehaviour
     }
     private void TerminarDialogo()
     {
+        Time.timeScale = 1f;
         marco.SetActive(false);
-        StopAllCoroutines();
+        
         indiceFraseActual = 0;
-       escribiendo = false;
-       dialogoActual = null;
-       Time.timeScale = 1f;
+        escribiendo = false;
+
+        StopAllCoroutines();
+        if (dialogoActual.tieneMision)
+        {
+            eventManager.NuevaMision();
+        }
+        dialogoActual = null;
     }
 
 }

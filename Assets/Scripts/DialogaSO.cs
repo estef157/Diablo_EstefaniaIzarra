@@ -6,9 +6,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Dialogo")]
 public class DialogaSO : ScriptableObject
 {
-    [TextArea (5,10)]
+    [TextArea]
     public string[] frases;
+    public AudioClip[] frasesClip;
     public float tiempoEntreLetras;
-    
-   
+    public bool tieneMision;
+    public string textoMision; //dialogo d la mision
 }
