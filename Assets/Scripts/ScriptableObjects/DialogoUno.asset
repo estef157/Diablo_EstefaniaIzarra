@@ -18,4 +18,4 @@ MonoBehaviour:
   frasesClip: []
   tiempoEntreLetras: 0.01
   tieneMision: 1
-  textoMision: Consigue setas para tu amigo
+  mision: {fileID: 11400000, guid: c96356fffdac46340a9f29d2a14f6178, type: 2}

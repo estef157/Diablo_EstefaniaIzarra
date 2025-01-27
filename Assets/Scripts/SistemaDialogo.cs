@@ -93,7 +93,9 @@ public class SistemaDialogo : MonoBehaviour
         StopAllCoroutines();
         if (dialogoActual.tieneMision)
         {
-            eventManager.NuevaMision();
+            //Comunico al event manager que hay una mision en este diálogo
+            eventManager.NuevaMision(dialogoActual.mision);
+
         }
         dialogoActual = null;
     }
