@@ -8505,6 +8505,9 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652589084917}
   - component: {fileID: 919132148117965392}
+  - component: {fileID: 919132148117965395}
+  - component: {fileID: 919132148117965394}
+  - component: {fileID: 919132148117965393}
   m_Layer: 0
   m_Name: PC_Nightmare_Mushroom
   m_TagString: Untagged
@@ -8533,6 +8536,58 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &919132148117965393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148117965391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fbe265253832224689a7a60ffb94f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventManager: {fileID: 0}
+--- !u!114 &919132148117965394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148117965391}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0, b: 0.6811161, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!65 &919132148117965395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148117965391}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 24.148954, y: 28.863453, z: 29.23861}
+  m_Center: {x: 3.549032, y: 13.93172, z: 1.7148741}
 --- !u!1 &988962230589010694
 GameObject:
   m_ObjectHideFlags: 0
@@ -8959,6 +9014,34 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803158809468661615, guid: 1a055b24e2d660f4fbf29562d7ed334a,
+        type: 3}
+      propertyPath: dialogo1
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f94e32329ce9a94d9cc579bf78d35da,
+        type: 2}
+    - target: {fileID: 8803158809468661615, guid: 1a055b24e2d660f4fbf29562d7ed334a,
+        type: 3}
+      propertyPath: dialogo2
+      value: 
+      objectReference: {fileID: 11400000, guid: 9bcd11938f34d6b40ae59a07aeb48b2b,
+        type: 2}
+    - target: {fileID: 8803158809468661615, guid: 1a055b24e2d660f4fbf29562d7ed334a,
+        type: 3}
+      propertyPath: dialogoActual
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803158809468661615, guid: 1a055b24e2d660f4fbf29562d7ed334a,
+        type: 3}
+      propertyPath: misionAsociada
+      value: 
+      objectReference: {fileID: 11400000, guid: c96356fffdac46340a9f29d2a14f6178,
+        type: 2}
+    - target: {fileID: 8803158809468661615, guid: 1a055b24e2d660f4fbf29562d7ed334a,
+        type: 3}
+      propertyPath: tiempoRotacion
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

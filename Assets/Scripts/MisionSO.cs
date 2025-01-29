@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -11,7 +12,7 @@ public class MisionSO : ScriptableObject
 
     public bool repeticion;//Si la misión tiene varios pasos. Por ejemplo necesitas recoger más de una seta.
     public int repeticionesTotales;//Necesitas 5 setas, se repite 5 veces
-    public int pasoActual; // por cual seta vas actualmente...
+    [NonSerialized] public int pasoActual = 0; // por cual seta vas actualmente...
     public int indiceMision;//Identificador único.
 
 }
