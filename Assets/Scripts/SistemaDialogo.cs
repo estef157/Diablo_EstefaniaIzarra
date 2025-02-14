@@ -12,7 +12,7 @@ public class SistemaDialogo : MonoBehaviour
 
     private bool escribiendo; //Determina si el sistema está escribiendo o no.
     private int indiceFraseActual;//marca la frase actual
-    private DialogaSO dialogoActual;
+    private DialogaSO dialogo;
     public static SistemaDialogo sistema;
 
     void Awake()
@@ -36,7 +36,7 @@ public class SistemaDialogo : MonoBehaviour
        Time.timeScale = 0f;
        npcCamera.SetPositionAndRotation(cameraPoint.position, cameraPoint.rotation);
       //  El diálogo actual con el que trabajamos es el que me dan por parámetro de entrada.
-        dialogoActual = dialogo;
+        this.dialogo = dialogo;
        marco.SetActive(true);
         StartCoroutine(EscribirFrase());
    }
@@ -47,11 +47,11 @@ public class SistemaDialogo : MonoBehaviour
       escribiendo = true;
 
         textoDialogo.text = "";
-        char[] fraseEnLetras = dialogoActual.frases[indiceFraseActual].ToCharArray();
+        char[] fraseEnLetras = dialogo.frases[indiceFraseActual].ToCharArray();
         foreach (char letra in fraseEnLetras)
         {
             textoDialogo.text += letra;
-            yield return new WaitForSecondsRealtime(dialogoActual.tiempoEntreLetras);
+            yield return new WaitForSecondsRealtime(dialogo.tiempoEntreLetras);
         }
         //este bool aka escribiendo 
         escribiendo = false;
@@ -65,7 +65,7 @@ public class SistemaDialogo : MonoBehaviour
         else
         {
             indiceFraseActual++;
-            if (indiceFraseActual < dialogoActual.frases.Length)
+            if (indiceFraseActual < dialogo.frases.Length)
             {
                 StartCoroutine(EscribirFrase());
             }
@@ -91,13 +91,13 @@ public class SistemaDialogo : MonoBehaviour
         escribiendo = false;
 
         StopAllCoroutines();
-        if (dialogoActual.tieneMision)
+        if (dialogo.tieneMision)
         {
             //Comunico al event manager que hay una mision en este diálogo
-            eventManager.NuevaMision(dialogoActual.mision);
+            eventManager.NuevaMision(dialogo.mision);
 
         }
-        dialogoActual = null;
+        dialogo = null;
     }
 
 }

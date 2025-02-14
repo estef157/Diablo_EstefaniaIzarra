@@ -16,11 +16,13 @@ public class NPC : MonoBehaviour, IInteractuable
      private DialogaSO dialogoActual;
     [SerializeField] private Transform puntoCamara;
     private float lookAtDuration = 0.5f;
-   
+    [SerializeField] private Texture2D cursordeNpc;
+    [SerializeField] private Texture2D cursordeIdl;
+
     private void Awake()
     {
+        outline = GetComponent<Outline>();
         dialogoActual = dialogo1;
-        
     }
 
 
@@ -43,7 +45,18 @@ public class NPC : MonoBehaviour, IInteractuable
         transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete (() => SistemaDialogo.sistema.IniciarDialogo(dialogoActual, puntoCamara)); 
     }
 
-    
+    private void OnMouseEnter()
+    {
+        Cursor.SetCursor(cursordeNpc, Vector2.zero, CursorMode.Auto);
+        outline.enabled = true;
+    }
 
-    
+
+    private void OnMouseExit()
+    {
+        Cursor.SetCursor(cursordeIdl, Vector2.zero, CursorMode.Auto);
+        outline.enabled = false;
+    }
+
+
 }

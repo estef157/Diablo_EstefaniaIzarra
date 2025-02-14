@@ -752,6 +752,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -1048,6 +1053,8 @@ GameObject:
   - component: {fileID: 304217509}
   - component: {fileID: 304217511}
   - component: {fileID: 304217512}
+  - component: {fileID: 304217514}
+  - component: {fileID: 304217513}
   m_Layer: 0
   m_Name: Enemigo
   m_TagString: Untagged
@@ -1121,17 +1128,51 @@ NavMeshAgent:
   m_AgentTypeID: -334000983
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 2
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: Infinity
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0.4
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &304217513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304217508}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f788b242b7a798418f0a60f7179be36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadCombate: 1
+  anim: {fileID: 1177304515}
+  danhoAtaque: 4
+  distanciaAtaque: 2
+  movAgent: {fileID: 304217512}
+  main: {fileID: 304217511}
+--- !u!114 &304217514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304217508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7c4cf5c9b65774896285ab70dd448c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 304217511}
+  ruta: {fileID: 1278223598}
+  velocidadPatrulla: 1
+  agent: {fileID: 304217512}
 --- !u!1001 &319240614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2266,6 +2307,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -2429,7 +2475,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 83e90bf63bfbb6d46a0ab36982372b3f, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &744000149 stripped
 Transform:
@@ -2604,6 +2650,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
         type: 3}
@@ -2830,7 +2881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aef734e98c706e4389c7c701b499bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marco: {fileID: 1308644752}
+  marco: {fileID: 2088126362}
   textoDialogo: {fileID: 617690664}
   npcCamera: {fileID: 1968724409}
 --- !u!1001 &826142900
@@ -3079,10 +3130,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.28
+  m_Height: 1.27
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.42, z: 0}
 --- !u!4 &866244633
 Transform:
   m_ObjectHideFlags: 0
@@ -3109,7 +3160,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 866244629}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.33
   m_Speed: 3.5
   m_Acceleration: 5
   avoidancePriority: 80
@@ -3118,7 +3169,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.32
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -3134,8 +3185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57da75d06b27cf0438435e34c81e6f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0
-  tiempoRotacion: 0
+  velocidad: 1
+  tiempoRotacion: 2
 --- !u!54 &866244636
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3175,6 +3226,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
         type: 3}
@@ -3333,6 +3389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
         type: 3}
@@ -3729,6 +3790,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
         type: 3}
@@ -4189,6 +4255,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -4533,6 +4604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
         type: 3}
@@ -5625,6 +5701,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1554025738}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1561839745 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7230584662318953860, guid: 1a055b24e2d660f4fbf29562d7ed334a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1266381036369262412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1568399465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5994,13 +6076,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 815149393}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 815149395}
+        m_TargetAssemblyTypeName: SistemaDialogo, Assembly-CSharp
+        m_MethodName: SiguienteFrase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6767,6 +6849,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -7122,6 +7209,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -7432,6 +7524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
         type: 3}
@@ -7751,6 +7848,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -7830,7 +7932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2088126363
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8960,6 +9062,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 87132329031125243, guid: 1a055b24e2d660f4fbf29562d7ed334a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225731962903017830, guid: 1a055b24e2d660f4fbf29562d7ed334a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.834
+      objectReference: {fileID: 0}
     - target: {fileID: 3373201104578408956, guid: 1a055b24e2d660f4fbf29562d7ed334a,
         type: 3}
       propertyPath: m_Name
@@ -9027,6 +9139,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9bcd11938f34d6b40ae59a07aeb48b2b,
         type: 2}
+    - target: {fileID: 8803158809468661615, guid: 1a055b24e2d660f4fbf29562d7ed334a,
+        type: 3}
+      propertyPath: cursordeIdl
+      value: 
+      objectReference: {fileID: 2800000, guid: f0556ff233d03be4ea69793a01440b16, type: 3}
+    - target: {fileID: 8803158809468661615, guid: 1a055b24e2d660f4fbf29562d7ed334a,
+        type: 3}
+      propertyPath: cursordeNpc
+      value: 
+      objectReference: {fileID: 2800000, guid: 442311c923fee7a4c97faa6fdeb43d7d, type: 3}
+    - target: {fileID: 8803158809468661615, guid: 1a055b24e2d660f4fbf29562d7ed334a,
+        type: 3}
+      propertyPath: puntoCamara
+      value: 
+      objectReference: {fileID: 1561839745}
     - target: {fileID: 8803158809468661615, guid: 1a055b24e2d660f4fbf29562d7ed334a,
         type: 3}
       propertyPath: dialogoActual
@@ -9415,7 +9542,7 @@ PrefabInstance:
     - target: {fileID: 5590137881415160695, guid: 4fbf0fda6207a6549b5bbdfe10b38bd6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5590137881415160695, guid: 4fbf0fda6207a6549b5bbdfe10b38bd6,
         type: 3}
@@ -9425,17 +9552,17 @@ PrefabInstance:
     - target: {fileID: 5590137881415160695, guid: 4fbf0fda6207a6549b5bbdfe10b38bd6,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5590137881415160695, guid: 4fbf0fda6207a6549b5bbdfe10b38bd6,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 220.99
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5590137881415160695, guid: 4fbf0fda6207a6549b5bbdfe10b38bd6,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 33.333332
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5590137881415160695, guid: 4fbf0fda6207a6549b5bbdfe10b38bd6,
         type: 3}
@@ -9475,12 +9602,12 @@ PrefabInstance:
     - target: {fileID: 5590137881415160695, guid: 4fbf0fda6207a6549b5bbdfe10b38bd6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 110.495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5590137881415160695, guid: 4fbf0fda6207a6549b5bbdfe10b38bd6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -16.666666
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 5590137881415160695, guid: 4fbf0fda6207a6549b5bbdfe10b38bd6,
         type: 3}
@@ -9501,6 +9628,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311307188758075041, guid: 4fbf0fda6207a6549b5bbdfe10b38bd6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12576,6 +12708,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6429222071561041830, guid: b0d8e32c53f125845a81c4f87af2bd1a,
         type: 3}

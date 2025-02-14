@@ -9,7 +9,7 @@ public class SistemaMisiones : MonoBehaviour
     [SerializeField]
     private EventManagerSO eventManager;
     [SerializeField]
-    private ToggleMision[] toggleMision;
+    private ToggleMision[] toggleMision;  
 
     private void OnEnable()
     {

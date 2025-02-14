@@ -26,7 +26,7 @@ public class SistemaCombate : MonoBehaviour
     private void OnEnable() //el combate ha sido habilitado
     {
         movAgent.speed = velocidadCombate;
-        movAgent.stoppingDistance = 0;
+        movAgent.stoppingDistance = distanciaAtaque;
     }
     void Start()
     {

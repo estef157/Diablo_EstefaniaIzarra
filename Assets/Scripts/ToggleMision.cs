@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,7 @@ public class ToggleMision : MonoBehaviour
     public Toggle Toggle { get => toggle; }
     void Start()
     {
-        
+        toggle = GetComponent<Toggle>();
     }
 
     // Update is called once per frame
