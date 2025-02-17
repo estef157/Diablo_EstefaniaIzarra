@@ -16,7 +16,6 @@ MonoBehaviour:
   - 'Gracias crack
 
 '
-  frasesClip: []
   tiempoEntreLetras: 1
   tieneMision: 0
-  mision: {fileID: 11400000, guid: c96356fffdac46340a9f29d2a14f6178, type: 2}
+  mision: {fileID: 0}

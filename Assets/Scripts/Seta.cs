@@ -8,7 +8,7 @@ public class Seta : MonoBehaviour, IInteractuable
     private Outline outline;
     [SerializeField] private EventManagerSO eventManager;
 
-    private MisionSO misionAsociada;
+    [SerializeField] private MisionSO misionAsociada;
     public void Interactuar(Transform interactuador)
     {
         misionAsociada.pasoActual++;

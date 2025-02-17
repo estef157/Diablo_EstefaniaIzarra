@@ -8,7 +8,6 @@ public class DialogaSO : ScriptableObject
 {
     [TextArea]
     public string[] frases;
-    public AudioClip[] frasesClip;
     public float tiempoEntreLetras;
 
 

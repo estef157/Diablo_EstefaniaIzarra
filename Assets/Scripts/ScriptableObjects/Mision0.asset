@@ -16,5 +16,4 @@ MonoBehaviour:
   ordenFinal: Vuelve y dale las setas
   repeticion: 1
   repeticionesTotales: 3
-  pasoActual: 0
-  indiceMision: 0
+  indiceMision: 1

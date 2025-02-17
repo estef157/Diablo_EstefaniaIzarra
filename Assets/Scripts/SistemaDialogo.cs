@@ -1,10 +1,11 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SistemaDialogo : MonoBehaviour
 {
-    private EventManagerSO eventManager;
+    [SerializeField] private EventManagerSO eventManager;
     [SerializeField] private GameObject marco;
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField] private Transform npcCamera;
@@ -13,6 +14,7 @@ public class SistemaDialogo : MonoBehaviour
     private bool escribiendo; //Determina si el sistema está escribiendo o no.
     private int indiceFraseActual;//marca la frase actual
     private DialogaSO dialogo;
+    private NPC npc;
     public static SistemaDialogo sistema;
 
     void Awake()
@@ -73,7 +75,7 @@ public class SistemaDialogo : MonoBehaviour
             {
                 TerminarDialogo();
             }
-            StartCoroutine(EscribirFrase());
+           
         }
     }
     private void CompletarFrase()
@@ -89,6 +91,7 @@ public class SistemaDialogo : MonoBehaviour
         
         indiceFraseActual = 0;
         escribiendo = false;
+        
 
         StopAllCoroutines();
         if (dialogo.tieneMision)
@@ -96,6 +99,10 @@ public class SistemaDialogo : MonoBehaviour
             //Comunico al event manager que hay una mision en este diálogo
             eventManager.NuevaMision(dialogo.mision);
 
+        }
+        if (npc.DialogoActual == npc.Dialogo2)
+        {
+            SceneManager.LoadScene(3);
         }
         dialogo = null;
     }
